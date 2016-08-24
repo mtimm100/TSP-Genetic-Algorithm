@@ -1,0 +1,20 @@
+Mikayla Timm
+COP4534
+Project 3 - TSP
+
+To run:
+	Open terminal
+	navigate to mtimm-p3 directory	
+	type the following commands:
+		make
+		./test
+
+The method I employed to produce my experimental results involed using these values for the Presets:
+
+25 individual tours per gen
+60000 generations
+.6 mutations
+.1 elites
+
+My algorithm first comes up with a "shuffled" set of tours. It sorts them ascending by cost. It keeps the elites and performs 'numMutations' mutations on the paths with costs that came after the elites in the sorted list. My mutation algorithm goes like this: get a random number between 0 and n/2, where n is the number of cities -1. Get another random number between n/2 and n-1. Swap the cities at these indices in the path array. This should help it swap cities from opposite sides of the array. It then takes the remaining tours and shuffles them to diversify the generation. It repeats this until the number of generations has been reached.
+I came up with the preset values through trial and error by seeing what gave the best results.
